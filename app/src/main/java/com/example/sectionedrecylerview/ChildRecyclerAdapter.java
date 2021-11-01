@@ -1,5 +1,6 @@
 package com.example.sectionedrecylerview;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class ChildRecyclerAdapter extends RecyclerView.Adapter<ChildRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Log.e("DATA IN CRV",items.toString());
         holder.itemTextView.setText(items.get(position));
         holder.itemTextView1.setText(items1.get(position));
         holder.itemImageView.setImageResource(images.get(position));

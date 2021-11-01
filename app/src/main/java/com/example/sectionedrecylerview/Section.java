@@ -4,24 +4,24 @@ import java.util.List;
 
 public class Section {
 
-    private String sectionName;
+    private List<String> sectionName;
     private List<String> sectionItems;
 
     private List<String> sectionItem1;
     List<Integer> sectionItemsImage;
 
-    public Section(String sectionName, List<String> sectionItems, List<String> sectionItem1,List<Integer> sectionItemsImage) {
+    public Section(List<String> sectionName, List<String> sectionItems, List<String> sectionItem1,List<Integer> sectionItemsImage) {
         this.sectionName = sectionName;
         this.sectionItems = sectionItems;
         this.sectionItemsImage = sectionItemsImage;
         this.sectionItem1=sectionItem1;
     }
 
-    public String getSectionName() {
+    public List<String> getSectionName() {
         return sectionName;
     }
 
-    public void setSectionName(String sectionName) {
+    public void setSectionName(List<String> sectionName) {
         this.sectionName = sectionName;
     }
 
@@ -48,7 +48,6 @@ public class Section {
     public void setSectionItemsImage(List<Integer> sectionItemsImage) {
         this.sectionItemsImage = sectionItemsImage;
     }
-
     //    @Override
 //    public String toString() {
 //        return "Section{" +

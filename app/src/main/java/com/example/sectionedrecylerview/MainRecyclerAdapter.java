@@ -1,5 +1,6 @@
 package com.example.sectionedrecylerview;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,15 +29,21 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         Section section = sectionList.get(position);
-        String sectionName = section.getSectionName();
+        List<String> sectionName = section.getSectionName();
         List<String> items = section.getSectionItems();
+        Log.e("ITEMS ARE (MRV) ",items.toString());
         List<String> items1 = section.getSectionItems();
         List<Integer> images = section.getSectionItemsImage();
         List<Integer> images1 = section.getSectionItemsImage();
 
-        holder.sectionNameTextView.setText(sectionName);
+
+        for(int i=0;i<sectionName.size();i++){
+            holder.sectionNameTextView.setText(sectionName.get(i));
+
+         //   Log.e("MESSAGE OF DATA", sectionName.get(i));
+
+        }
 
         ChildRecyclerAdapter childRecyclerAdapter = new ChildRecyclerAdapter(items,items1, images,images1);
         holder.childRecyclerView.setAdapter(childRecyclerAdapter);
